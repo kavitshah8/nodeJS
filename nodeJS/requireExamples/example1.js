@@ -1,3 +1,3 @@
-var aan = require('./announce');
+var x = require('./announce');
 
-aan('Hello Kavit');
+x('Hello Alice');

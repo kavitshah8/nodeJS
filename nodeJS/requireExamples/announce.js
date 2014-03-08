@@ -1,3 +1,3 @@
 module.exports = function(param){
-	console.log('Aanal:'+ param);
+	console.log('Alice:'+ param);
 };
