@@ -1,0 +1,13 @@
+// nodePackageManager (npm) Commands
+
+npm --init; // Helps you create a package.json
+
+npm install; // Helps you install dependencies
+
+npm install --save express; // Installs express module and adds into package.json
+
+npm install -g express; // Installs express module globally
+
+express <nameOfProject>; // Creates a project with starter files for you
+	cd <nameOfProject>; 
+	npm install; // to install dependecies 
