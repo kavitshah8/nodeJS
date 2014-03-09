@@ -18,7 +18,7 @@ app.use(express.methodOverride());
 app.use(function(req, res, next){
 	res.set('X-Powered-By','Flight-Tracker');
 	next();
-})
+});
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -30,6 +30,8 @@ if ('development' == app.get('env')) {
 app.get('/flight/:number', routes.flight);
 //app.get('/users', user.list);
 app.put('/flight/:number/arrived', routes.arrived);
+app.get('/list',routes.list);
+app.get('/list/json',routes.listjson);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
