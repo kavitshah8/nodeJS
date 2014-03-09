@@ -1,13 +1,28 @@
-// nodePackageManager (npm) Commands
+// Architecture
 
-npm --init; // Helps you create a package.json
+node
+	Installation
+		pre compiled binary
+		version manager (using nodeVersionManager(nvm))
+		compiling from source  
+	
+	git CLI in windows
+		advantages
+			issue git commands
+			issue node commands
+			issue UNIX commands
 
-npm install; // Helps you install dependencies
+	nodePacketManager(npm)
+		$npm --init // Creates a package.json
+		$npm install // Installs dependencies from package.json
+		
+		Local Module - project based modules
+		$npm install --save express // Installs express module and adds into package.json
+		
+		Global Module - commands you install on node
+			$npm install -g express // Installs express module globally
+			$express <nameOfProject> // Creates a project with starter files for you
+				$cd <nameOfProject> 
+				$npm install // to install dependecies, creates node_modules
 
-npm install --save express; // Installs express module and adds into package.json
-
-npm install -g express; // Installs express module globally
-
-express <nameOfProject>; // Creates a project with starter files for you
-	cd <nameOfProject>; 
-	npm install; // to install dependecies 
+	
