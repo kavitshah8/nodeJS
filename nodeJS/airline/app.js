@@ -1,38 +1,39 @@
-// Module dependencies.
-var express = require('express');
-var routes = require('./routes');
-//var user = require('./routes/user');
-var http = require('http');
-var path = require('path');
-var app = express();
+module.exports = function(flights){
 
-// all environments
-app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-app.use(express.favicon());
-app.use(express.logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded());
-app.use(express.methodOverride());
-app.use(function(req, res, next){
-	res.set('X-Powered-By','Flight-Tracker');
-	next();
-});
-app.use(app.router);
-app.use(express.static(path.join(__dirname, 'public')));
+	// Module dependencies.
+	var express = require('express');
+	var routes = require('./routes')(flights);
+	//var user = require('./routes/user');
+	var path = require('path');
+	var app = express();
 
-// development only
-if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
-}
+	// all environments
+	app.set('port', process.env.PORT || 3000);
+	app.set('views', path.join(__dirname, 'views'));
+	app.set('view engine', 'jade');
+	app.use(express.favicon());
+	app.use(express.logger('dev'));
+	app.use(express.json());
+	app.use(express.urlencoded());
+	app.use(express.methodOverride());
+	app.use(function(req, res, next){
+		res.set('X-Powered-By','Flight-Tracker');
+		next();
+	});
+	app.use(app.router);
+	app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/flight/:number', routes.flight);
-//app.get('/users', user.list);
-app.put('/flight/:number/arrived', routes.arrived);
-app.get('/list',routes.list);
-app.get('/list/json',routes.listjson);
+	// development only
+	if ('development' == app.get('env')) {
+	  app.use(express.errorHandler());
+	}
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
-});
+	app.get('/flight/:number', routes.flight);
+	//app.get('/users', user.list);
+	app.put('/flight/:number/arrived', routes.arrived);
+	app.get('/list',routes.list);
+	app.get('/list/json',routes.listjson);	
+
+	return app;
+};
+
