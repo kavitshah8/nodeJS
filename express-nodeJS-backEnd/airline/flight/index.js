@@ -1,3 +1,4 @@
+// You can avoid using new keyword if you do not capitalize first letter of the constructor name
 var Flight = function () {
 	this.data = {
 		number: null,
