@@ -1,4 +1,5 @@
-// You can avoid using new keyword if you do not capitalize first letter of the constructor name
+// I think this is the best practice to do prototypal inheritance.
+
 var Flight = function () {
 	this.data = {
 		number: null,
