@@ -9,26 +9,26 @@ var Flight = function () {
 		actualDepart: null,
 		actualArrive: null
 	};
+};
 
-	this.fill = function (info) {
+Flight.prototype.fill = function (info) {
 		for(var prop in this.data) {
 			if(this.data[prop] !== 'undefined') {
 				this.data[prop] = info[prop];
 			}
 		}
-	};
+};
 
-	this.triggerDepart = function () {
+Flight.prototype.triggerDepart = function () {
 		this.data.actualDepart = Date.now();
-	};
+};
 
-	this.triggerArrive = function () {
+Flight.prototype.triggerArrive = function () {
 		this.data.actualArrive = Date.now();
-	};
+};
 
-	this.getInformation = function () {
+Flight.prototype.getInformation = function () {
 		return this.data;
-	};
 };
 
 module.exports = function (info) {
