@@ -1,0 +1,16 @@
+// Architecture
+
+node
+	Installation
+		pre compiled binary
+		version manager (using nodeVersionManager(nvm))- ? how to install in Windows ?
+		compiling from source  
+	
+	git CLI in windows
+		advantages
+			issue git commands
+			issue node commands
+			issue UNIX commands
+
+	nodePacketManager(npm)
+		
