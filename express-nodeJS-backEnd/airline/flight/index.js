@@ -1,3 +1,4 @@
+// JS the good parts; ch 5 Inheritance - Pseudoclassical inheritance 
 // I think this is the best practice to do prototypal inheritance.
 
 var Flight = function () {
